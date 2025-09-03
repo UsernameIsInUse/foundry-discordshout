@@ -25,6 +25,15 @@ function initialize() {
     type: String,
     default: "Join for a session, or mess with your character!"
   });
+
+  game.settings.register('foundry-discordshout', 'color', {
+    name: "Hex Color",
+    hint: 'Hex color to use for the discord embed (eg: #FF381D) (optional).',
+    scope: "world",
+    config: true,
+    type: String,
+    default: ""
+  });
 }
 
 Hooks.once("init", () => {

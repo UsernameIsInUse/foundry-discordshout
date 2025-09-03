@@ -6,6 +6,7 @@ function sendMessage() {
   const customDescription = game.settings.get('foundry-discordshout', 'description');
   const foundryUrl = game.settings.get('foundry-discordshout', 'url');
   const webhook = game.settings.get('foundry-discordshout', 'webhook');
+  const customColor = game.settings.get('foundry-discordshout', 'color');
   const request = new XMLHttpRequest();
 
   request.open("POST", webhook)
@@ -25,6 +26,10 @@ function sendMessage() {
 
   if (customDescription?.trim()) {
     embed.description = customDescription;
+  }
+
+  if (foundryUrl?.trim()) {
+    embed.color = hexToDecimal(customColor);
   }
 
   const params = {
