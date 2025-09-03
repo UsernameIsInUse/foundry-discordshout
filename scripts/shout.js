@@ -28,7 +28,7 @@ function sendMessage() {
     embed.description = customDescription;
   }
 
-  if (foundryUrl?.trim()) {
+  if (customColor?.trim()) {
     embed.color = hexToDecimal(customColor);
   }
 
